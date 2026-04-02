@@ -1,0 +1,102 @@
+a{color: blue; }
+.model{color: rgb(255, 0, 0); font-size: 20px; font-weight: bold;}
+h1{color: rgb(22, 37, 241); font-family: serif;}
+#par1{color: rgb(0, 0, 0);font-weight:200;font-size: 20px; font-weight: 200
+; margin: auto; }
+.DEMO{
+    width: 500px;
+    height: 500px;
+    background-color: rgb(162, 197, 243);
+    padding: 60px;
+overflow: hidden;
+font-size: 16px;
+font-weight:bold;
+margin: auto;
+}
+.DEMO1{
+    width: 500px;
+    height: 500px;
+    background-color: rgb(145, 241, 174);
+    padding: 60px;
+overflow: hidden;
+font-size: 16px;
+font-weight:bold;
+margin: auto;
+
+}
+.DEMO2{
+    width: 500px;
+    height: 500px;
+    background-color: rgb(101, 231, 210);
+    padding: 60px;
+overflow: hidden;
+font-size: 16px;
+font-weight:bold;
+margin: auto;
+}
+#telephone{width: 1800px;
+    height: 500px;
+    background-color: rgb(176, 237, 255);
+    padding: 60px;
+overflow: hidden;
+font-size: 16px;
+font-weight:bold;
+}
+.enter{
+    width: 1800px;
+    height: 300px;
+    background-color: rgb(187, 187, 187);
+      padding: 60px;
+      text-align: center;
+overflow: hidden;
+margin: auto;}
+h2{text-align: center;}
+.E-Way{
+    width: auto;
+    height: auto;
+    background-color:  rgb(187, 187, 187);
+    padding: 60px;
+overflow: hidden;
+font-size: 16px;
+font-weight:bold;
+margin: auto;text-align: center;
+}
+.pE-Way{width: auto;
+    height: auto;
+    padding: 60px;
+overflow: hidden;
+font-size: 16px;
+font-weight:bold;
+margin: auto;text-align: center;}
+.T-Way{width: auto;
+    height: auto;
+    background-color:  rgb(187, 187, 187);
+    padding: 60px;
+overflow: hidden;
+font-size: 16px;
+font-weight:bold;
+margin: auto;text-align: center;}
+.pT-Wey{
+    width: auto;
+    height: auto;
+    padding: 60px;
+overflow: hidden;
+font-size: 16px;
+font-weight:bold;
+margin: auto;text-align: center;}
+.Daily{width: auto;
+    height: auto;
+    background-color:  rgb(187, 187, 187);
+    padding: 60px;
+overflow: hidden;
+font-size: 16px;
+font-weight:bold;
+margin: auto;text-align: center;}
+.pDaily{
+    width: auto;
+    height: auto;
+    padding: 60px;
+overflow: hidden;
+font-size: 16px;
+font-weight:bold;
+margin: auto;text-align: center;}
