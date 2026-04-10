@@ -1,0 +1,130 @@
+
+a{color: blue; }
+.container {  max-width: 1200px;} 
+.enter{
+    width: 1800px;
+    height: 200px;
+    background-color: rgb(187, 187, 187);
+      padding: 60px;
+      text-align: center;
+overflow: hidden;
+margin: auto;}
+
+
+.model{color: rgb(255, 0, 0); font-size: 20px; font-weight: bold;}
+h1{color: rgb(22, 37, 241); font-family: serif;}
+#par1{color: rgb(0, 0, 0);font-weight:200;font-size: 18px; margin: auto}
+
+
+
+.da1{
+    height: 500px;
+    background-color: rgb(162, 197, 243);
+    padding: 60px;
+font-size: 30px;
+font-weight:bold;
+margin: 0;
+overflow:scroll;
+display: inline
+}
+
+.twa1{
+    height: 500px;
+    background-color: rgb(145, 241, 174);
+    padding: 60px;
+font-size: 30px;
+font-weight:bold;
+margin: 0;
+overflow:scroll;
+display: inline
+}
+.ewa1{
+    
+    background-color: rgb(101, 231, 210);
+   box-sizing: border-box;
+font-size: 30px;
+font-weight:bold;
+margin: 0;
+overflow:scroll;
+display: inline
+}
+
+#telephone{width: 1800px;
+    height: 500px;
+    background-color: rgb(176, 237, 255);
+    padding: 60px;
+overflow: hidden;
+font-size: 16px;
+font-weight:bold;
+}
+
+h2{text-align: center; display: block;}
+
+.E-Way{
+    width: auto;
+    height: auto;
+    background-color:  rgb(187, 187, 187);
+    padding: 60px;
+overflow: hidden;
+font-size: 16px;
+font-weight:bold;
+margin: auto;text-align: center;
+}
+.pE-Way{width: auto;
+    height: auto;
+    padding: 60px;
+overflow: hidden;
+font-size: 16px;
+font-weight:bold;
+margin: auto;text-align: center;}
+.T-Way{width: auto;
+    height: auto;
+    background-color:  rgb(187, 187, 187);
+    padding: 60px;
+overflow: hidden;
+font-size: 16px;
+font-weight:bold;
+margin: auto;text-align: center;}
+.pT-Wey{
+    width: auto;
+    height: auto;
+    padding: 60px;
+overflow: hidden;
+font-size: 16px;
+font-weight:bold;
+margin: auto;text-align: center;}
+.Daily{width: auto;
+    height: auto;
+    background-color:  rgb(187, 187, 187);
+    padding: 60px;
+overflow: hidden;
+font-size: 16px;
+font-weight:bold;
+margin: auto;text-align: center;}
+.pDaily{
+    width: auto;
+    height: auto;
+    padding: 60px;
+overflow: hidden;
+font-size: 16px;
+font-weight:bold;
+margin: auto;text-align: center;}
+
+.organization {background-color: seagreen; position: fixed }
+
+.dnipro { font-weight: bold; background-color: rgb(250, 238, 238); display: inline-block; }
+.dal {float: left;}
+.dal1 { background-color: rgb(211, 222, 228); width: 900px;height:400px; overflow:scroll; font-size: 20px; display: inline-block}
+.twa {float: left;}
+.twa11 {background-color: rgb(211, 222, 228); width: 900px;height:400px; overflow:scroll; font-size: 20px; display: inline-block}
+.ewa {float: left;}
+
+.ewa11 {background-color: rgb(211, 222, 228); width: 900px;height:400px; overflow:scroll; font-size: 20px; display: inline-block}
+.clerfix {clear: both;}
+h3{text-align: center; display: block;}
+
+
+.qw1 { width: 500px; height: 300px; float: left;}
+.qw2 { width: 500px; height: 300px; float: left;}
+.qw3 { width: 500px; height: 300px; float: top;}
+.qw4 { width: 500px; height: 300px; float: right;}
