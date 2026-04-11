@@ -1,0 +1,28 @@
+* {  box-sizing: border-box;}
+.conteiner {width: 1920px; height: auto; margin: 10px}
+.clearfix {clear: both;}
+
+
+
+
+
+
+
+.block1 {float:left; width: 300px; height: 200px; background-color: antiquewhite; margin: 10px }
+.block2 {float:right; width: 300px; height: 200px;background-color: aqua;margin: 10px}
+.block3 {float:left; width: 300px; height: 200px; background-color: gray;margin: 10px}
+.block4 {float:right; width: 300px; height: 200px;background-color: red;margin: 10px}
+.block5 {float:right; width: 300px; height: 200px;background-color: bisque;margin: 10px}
+.block6 {float:right; width: 300px; height: 200px;background-color: gold ;margin: 10px}
+.block7 {float:right; width: 300px; height: 200px;background-color:  green;margin: 10px}
+.block8 {float:left; width: 300px; height: 200px;background-color:  darkkhaki;margin: 10px}
+.block9 {float:left; width: 300px; height: 200px;background-color:  darkmagenta;margin: 10px}
+.block10 {float:right; width: 300px; height: 200px;background-color:  chocolate;margin: 10px}
+.block12 {float:left; width: 150px; height: 200px;background-color:  hotpink;margin: 10px ;clear: right}
+.block11 {float:left; width: 150px; height: 200px;background-color:  yellowgreen;margin: 10px ;}
+
+
+.block13 {float:left; width: 300px; height: 420px;background-color:  darkorange;margin: 10px ; ;}
+.block14 {float:right; width: 300px; height: 200px;background-color:  blueviolet;margin: 10px; }
+.block15 {float:right; width: 300px; height: 200px;background-color:  magenta;margin: 10px; ;}
+.block16 {float:right; width: 300px; height: 200px;background-color:  indianred;margin: 10px}
