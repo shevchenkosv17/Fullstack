@@ -1,13 +1,6 @@
 * {  box-sizing: border-box;}
-.conteiner {width: 1920px; height: auto; margin: 10px}
+.container {width: 1920px; height: auto; margin: 10px}
 .clearfix {clear: both;}
-
-
-
-
-
-
-
 .block1 {float:left; width: 300px; height: 200px; background-color: antiquewhite; margin: 10px ;}
 .block2 {float:right; width: 300px; height: 200px;background-color: aqua;margin: 10px}
 .block3 {float:left; width: 300px; height: 200px; background-color: gray;margin: 10px}
@@ -19,14 +12,12 @@
 .block9 {float:left; width: 300px; height: 200px;background-color:  darkmagenta;margin: 10px}
 .block10 {float:right; width: 300px; height: 200px;background-color:  chocolate;margin: 10px}
 .block11 {float:right; width: 300px; height: 200px;background-color:  yellowgreen;margin: 10px ;}
-
 .block12 {float:right; width: 300px; height: 200px;background-color:  hotpink;margin: 10px ;clear: right}
 .block13 {float: right;width: 300px;height: 420px; background: orange;margin: 10px;;}
-
 .right-col {float: right;width: 320px;}
 .left-col {float: left;width: 320px;}
-
-
+.block-group {width: 660px;margin: 0 auto;overflow: hidden;}
+.mid-col {float: left; width: 320px;}
 .block14 {float:left; width: 300px; height: 200px;background-color:  blueviolet;margin: 10px; }
-.block15 {float:left; width: 300px; height: 200px;background-color:  magenta;margin: 10px; clear: left;}
+.block15 {float:left; width: 300px; height: 200px;background-color:  magenta;margin: 10px; ;}
 .block16 {float:left; width: 300px; height: 420px;background-color:  indianred;margin: 10px}
