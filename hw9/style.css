@@ -109,3 +109,20 @@ justify-content: center;
     line-height: 164%;
     margin-bottom: 57px;
 }
+
+.video .video-player {
+    position: relative;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+}
+.video .video-player .video-preview {
+    
+    
+}
+.video .video-player .play-button {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+}
