@@ -1,0 +1,303 @@
+body,
+html {
+    font-family: 'Roboto', sans-serif;
+    color: #727272;
+    font-weight: 400;
+}
+
+
+
+.header .content {
+    padding-top: 79px;
+    padding-bottom: 79px;
+}
+
+.main-menu .menu-links {
+    display: flex;
+    gap: 42px;
+
+}
+
+.menu-links .menu-link a {
+    text-decoration: none;
+    color: #000;
+    font-size: 16px;
+    line-height: 16px;
+    letter-spacing: 10%;
+    text-transform: uppercase;
+    ;
+}
+
+.menu-links .menu-link a.active {
+    color: #34547A;
+}
+
+.menu-links .menu-link a:hover {
+    text-decoration: underline;
+}
+
+.hero .content {
+    padding-top: 50px;
+    padding-bottom: 141px
+}
+
+.hero .title {
+
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 48px;
+    color: #000;
+    margin-bottom: 60px;
+}
+
+.hero .description {
+    width: 50%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 164%;
+    margin-bottom: 65px;
+}
+
+.write-me {
+    border: none;
+    padding: 24px 68px;
+    background-color: #34547A;
+    color: #fff;
+    font-weight: 400;
+    letter-spacing: 18%;
+    text-transform: uppercase;
+    cursor: pointer
+}
+
+
+.about .content {
+    padding-top: 112px;
+    padding-bottom: 100px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.about .title {
+    margin-left: auto;
+    margin-right: auto;
+    width: 540px;
+    font-weight: 500;
+    font-size: 48px;
+    margin-bottom: 50px;
+    color: #000;
+}
+
+.about .description {
+    width: 540px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 164%;
+}
+
+.video .content {
+    padding-top: 100px;
+    padding-bottom: 37px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.video .title {
+    font-weight: 500;
+    font-size: 48px;
+    line-height: 48px;
+    color: #000;
+    margin-bottom: 60px;
+}
+
+.video .description {
+    width: 50%;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 164%;
+    margin-bottom: 27px;
+}
+
+.video .video-player {
+    
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+
+
+}
+
+.video .video-player .play-button {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.projects .content {
+    display: flex;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    justify-content: space-between;
+
+}
+
+.projects .project {
+    width: 141px;
+    position: relative;
+    padding: 70px;
+}
+
+.projects .logo {
+    position: absolute;
+    left: 0;
+}
+
+.projects .title {
+    color: #fff;
+    font-weight: 500;
+    font-size: 21px;
+    margin-bottom: 5px;
+    padding-top: 4px;
+}
+
+.projects .description {
+    color: #fff;
+    padding-bottom: 4px;
+}
+
+.footer .content {
+
+    padding-bottom: 50px;
+    padding-top: 50px;
+}
+
+.author {
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 21px;
+    margin-bottom: 16px;
+}
+
+
+
+.copy {
+    color: #fff;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    line-height: 164%;
+}
+
+@media (max-width: 1200px) {
+    .video .video-player .video-preview {
+        width: 100%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .header .content .main-menu .menu-links {
+        width: 100%;
+    }
+
+
+
+    .projects .content {
+        flex-wrap: wrap;
+       column-gap: 0;
+    }
+
+    .header .content {
+        padding-top: 39px;
+        padding-bottom: 39px;
+    }
+
+    .hero .content {
+        padding-top: 25px;
+        padding-bottom: 70px
+    }
+
+    .about .content {
+        padding-top: 56px;
+        padding-bottom: 50px;
+    }
+
+
+    .video .content {
+        padding-top: 50px;
+        padding-bottom: 18px;
+    }
+
+    .projects .content {
+        padding-top: 50px;
+        padding-bottom: 50px;
+    }
+
+    .footer .content {
+
+        padding-bottom: 25px;
+        padding-top: 25px;
+    }
+    .projects .project {
+        width: calc(100%/3);
+        
+    }
+}
+
+
+@media (max-width: 792px) {
+    body {
+        font-size: 14px;
+    }
+
+    .content {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+
+    .main-menu .menu-links {
+        flex-direction: column;
+        gap: 32px;
+    }
+
+.hero .title {
+    font-size: 37px;
+    margin: 40px;
+}
+
+.hero .description {
+   width: 80%;
+   margin-bottom: 50px;
+
+}
+
+
+.about .title, .video .title {
+    width: 100%;
+    font-size: 25px;
+    margin-bottom: 30px;
+}
+
+.about .description {
+    width: 100%;
+}
+.video .video-player .play-button {
+    width: 10%;
+}
+
+
+
+
+
+
+}

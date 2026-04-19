@@ -1,0 +1,59 @@
+.content  {
+    margin-left: auto;
+    margin-right: auto;
+    width: 1100px;
+}
+
+@media (max-width: 1200px) {
+  .content { width: 960px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .content { width: 768px;
+  }
+}
+
+
+@media (max-width: 792px) {
+  .content { width: 100%;
+  }
+}
+
+
+
+
+
+
+
+.header {
+    background-color: #EEEFF1;
+    
+}
+
+
+
+.hero {
+    background-color: #EEEFF1;
+}
+
+
+.about {
+    background-color: #f9f9f9;
+}
+
+
+.projects {
+    background-color: #34547A;
+    ;
+}
+
+
+.video {
+    background-color: #fff;
+}
+
+
+.footer {
+    background-color: #34547A;
+}
