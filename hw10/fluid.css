@@ -1,0 +1,50 @@
+* * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+html,
+body,
+main {
+    height: 100%;
+}
+
+.container {
+    display: flex;
+}
+
+.content {
+    background-color: aqua;
+    width: 50%;
+}
+
+.menu {
+    background-color: blueviolet;
+    width: 25%;
+}
+
+.navigation {
+    background-color: brown;
+    width: 25%;
+}
+
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+
+
+    .content {
+        width: 100%;
+    }
+
+    .menu {
+        width: 100%;
+    }
+
+    .navigation {
+        width: 100%;
+    }
+
+}
