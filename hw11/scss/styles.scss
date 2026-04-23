@@ -1,0 +1,211 @@
+$mainColor: #34547A;
+$secondaryColor: #727272;
+$mainFont: 'Roboto', sans-serif;
+$mainFontweight: 400;
+$secondaryFontweight: 500;
+$mainTextColor: #000;
+$secondaryTextColor: #fff;
+
+
+body,
+html {
+    font-family: $mainFont;
+    color: $secondaryColor;
+    font-weight: $mainFontweight;
+}
+
+.header {
+    .content {
+        padding-top: 79px;
+        padding-bottom: 79px;
+
+        .main-menu .menu-links {
+            display: flex;
+            gap: 42px;
+
+            a {
+                text-decoration: none;
+                color: $mainTextColor;
+                font-size: 16px;
+                line-height: 16px;
+                letter-spacing: 10%;
+                text-transform: uppercase;
+
+                a.active {
+                    color: $mainColor;
+
+                    a:hover {
+                        text-decoration: underline;
+                    }
+                }
+            }
+
+        }
+    }
+}
+
+.hero {
+    .content {
+        padding-top: 50px;
+        padding-bottom: 141px;
+
+        .description {
+            width: 50%;
+            font-weight: $mainFontweight;
+            font-size: 16px;
+            line-height: 164%;
+            margin-bottom: 65px;
+
+
+        }
+
+        .write-me {
+            border: none;
+            padding: 24px 68px;
+            background-color: $mainColor;
+            color: $secondaryTextColor;
+            font-weight: $mainFontweight;
+            letter-spacing: 18%;
+            text-transform: uppercase;
+            cursor: pointer
+        }
+    }
+}
+
+.about {
+    .content {
+        padding-top: 112px;
+        padding-bottom: 100px;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .title {
+            margin-left: auto;
+            margin-right: auto;
+            width: 540px;
+            font-weight: $secondaryFontweight;
+            font-size: 48px;
+            margin-bottom: 50px;
+            color: $mainTextColor;
+        }
+
+        .description {
+            width: 540px;
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+            font-weight: $mainFontweight;
+            font-size: 16px;
+            line-height: 164%;
+        }
+    }
+}
+
+.video {
+    .content {
+        padding-top: 100px;
+        padding-bottom: 37px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        .title {
+            font-weight: $secondaryFontweight;
+            font-size: 48px;
+            line-height: 48px;
+            color: $mainTextColor;
+            margin-bottom: 60px;
+        }
+
+        .description {
+            width: 50%;
+            font-weight: $mainFontweight;
+            font-size: 16px;
+            line-height: 164%;
+            margin-bottom: 27px;
+        }
+    }
+
+    .video-player {
+        padding-bottom: 100px;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .play-button {
+            position: absolute;
+
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+
+
+
+}
+
+.projects {
+    .content {
+        display: flex;
+        padding-top: 100px;
+        padding-bottom: 100px;
+        justify-content: space-between;
+
+        .project {
+            width: 141px;
+            position: relative;
+            padding: 70px;
+        }
+
+        .logo {
+            position: absolute;
+            left: 0;
+        }
+
+        .title {
+            color: $secondaryTextColor;
+            font-weight: $secondaryFontweight;
+            font-size: 21px;
+            margin-bottom: 5px;
+            padding-top: 4px;
+        }
+
+        .description {
+            color: $secondaryTextColor;
+            padding-bottom: 4px;
+        }
+
+    }
+}
+
+.footer {
+    .content {
+
+        padding-bottom: 50px;
+        padding-top: 50px;
+
+        .author {
+            color: $secondaryTextColor ;
+            font-family: $mainFont;
+            font-weight: $secondaryFontweight;
+            font-size: 21px;
+            margin-bottom: 16px;
+        }
+
+        .copy {
+            color: $secondaryTextColor;
+            font-family: $mainFont;
+
+            font-size: 13px;
+
+            line-height: 164%;
+
+
+        }
+    }
+}
