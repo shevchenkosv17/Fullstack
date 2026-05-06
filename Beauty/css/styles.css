@@ -44,6 +44,40 @@ body {
   text-decoration: underline;
 }
 
+.header {
+  border-bottom: 1px solid #efefef;
+}
+.header .content {
+  padding: 20px 0;
+  display: flex;
+  align-items: center;
+}
+.header .logo {
+  margin-right: auto;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+.header .logo-title {
+  font-family: "Roboto", sans-serif;
+  font-weight: 700;
+  line-height: 1;
+  font-size: 36px;
+  letter-spacing: 10%;
+  color: rgb(241, 60, 110);
+}
+.header .tel {
+  font-size: 16px;
+}
+.header .callback {
+  margin-left: 40px;
+  display: flex;
+  padding: 13px 55px 12px;
+  border: 2px solid rgb(241, 60, 110);
+  border-radius: 40px;
+  color: #000;
+}
+
 .sub-menu {
   padding: 30px 0;
 }
@@ -65,6 +99,49 @@ body {
 }
 .sub-menu .content .menu ul a:hover {
   text-decoration: underline;
+}
+
+.hero {
+  background-color: rgb(241, 60, 110);
+  color: #fff;
+  overflow: hidden;
+}
+.hero .content {
+  padding: 192px 0 193px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.hero .title {
+  @iclude bold;
+  font-size: 48px;
+  margin-bottom: 50px;
+}
+.hero .description {
+  margin-bottom: 30px;
+  width: 258px;
+}
+.hero .cta {
+  display: flex;
+  padding: 13px 55px 12px;
+  border: 2px solid #fff;
+  border-radius: 40px;
+  color: #fff;
+  letter-spacing: 5%;
+  width: fit-content;
+}
+.hero .product {
+  border: 85px solid rgb(245, 118, 153);
+  background: rgb(249, 173, 194);
+  border-radius: 50%;
+  width: 900px;
+  height: 900px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  right: -60px;
 }
 
 /*# sourceMappingURL=styles.css.map */
