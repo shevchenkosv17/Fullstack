@@ -1,3 +1,12 @@
-
+.container .content {
+  width: 1600px;
+  margin: 0 auto;
+  background-color: red;
+}
+@media (max-width: 1660px) {
+  .container .content {
+    width: 1320px;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */
