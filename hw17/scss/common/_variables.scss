@@ -1,15 +1,16 @@
 $breakpoints: (
 
-    mobile: 576px,
-    tablet: 768px,
-    tablet-lg: 992px,
-    desktop: 1200px,
-    desktop-lg: 1400px
+    mobile: 728px,
+    tablet: 984px,
+    tablet-lg: 1400px,
+    desktop: 1680px
 );
 $content-widths: (
-    mobile: 315px,
+    mobile: 100%,
     tablet: 648px,
     tablet-lg: 904px,
     desktop: 1320px,
     desktop-lg: 1600px
 );
+
+$black: black;

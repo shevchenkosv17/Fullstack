@@ -1,0 +1,28 @@
+@mixin text () {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 26px;
+    letter-spacing: 0%;
+    font-optical-sizing: auto;
+    font-style: normal;
+    color: $black;
+}
+
+@mixin headerdot () {
+    position: relative;
+    align-items: center;
+    display: flex;
+    margin-right: 18px;
+
+    &::after {
+        content: '';
+        background-color: white;
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        left: calc(100% + 6px);
+    }
+}

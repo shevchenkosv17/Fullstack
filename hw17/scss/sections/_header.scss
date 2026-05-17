@@ -1,0 +1,147 @@
+.header {
+    &__content {
+        display: grid;
+
+        grid-template-areas:
+            "logo contacts"
+            "logo menu";
+        padding: 50px;
+        align-items: start;
+       
+
+        @media (max-width:map-get($breakpoints, tablet)) {
+            grid-template-areas:
+                "contacts"
+                "logo"
+                "menu";
+        }
+
+        @media (max-width:map-get($breakpoints, mobile)) {
+            grid-template-areas:
+                "contacts contacts"
+                "logo hamburger"
+        }
+
+
+    }
+
+    &__logo {
+        grid-area: logo;
+        width: fit-content;
+        height: fit-content;
+
+    }
+
+    &__contacts {
+        grid-area: contacts;
+        width: fit-content;
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        align-content: center;
+        margin-bottom: 16px;
+
+
+
+
+        @media (max-width:map-get($breakpoints, tablet)) {
+            margin-left: initial;
+        }
+    }
+
+
+    &__menu {
+        grid-area: menu;
+        width: fit-content;
+        margin-left: auto;
+        height: fit-content;
+        
+
+        @media (max-width:map-get($breakpoints, tablet)) {
+            margin-left: initial;
+        }
+
+        @media (max-width:map-get($breakpoints, mobile)) {
+            display: none;
+        }
+    }
+
+    &__hamburger {
+        display: none;
+        grid-area: hamburger;
+        margin-left: auto;
+
+        @media (max-width:map-get($breakpoints, mobile)) {
+            display: flex;
+        }
+
+
+    }
+
+  
+
+    &__hamburger {}
+
+    &__languages {
+        display: flex;
+        @include headerdot;
+    }
+
+    &__language {
+
+        font-weight: 700;
+        font-size: 12px;
+        line-height: 100%;
+        letter-spacing: 1px;
+        color: white;
+        width: 33px;
+        height: 25px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: none;
+
+        &--active {
+            background: #F0145A;
+            pointer-events: none;
+
+        }
+
+        &:hover {
+            background: pink;
+            transition: background-color 0.5s;
+        }
+    }
+
+    &__adress {
+        font-style: normal;
+        @include headerdot;
+
+    }
+
+    &__callback {
+       
+        font-weight: 700;
+        font-size: 16px;
+        color: white;
+        @include headerdot;
+    }
+
+    &__fb {}
+
+
+    &__menu-list {
+        display: flex;
+        gap: 15px;
+    }
+    &__menu-item {}
+    &__menu-link {
+       
+        font-weight: 700;
+        font-size: 16px;
+        color: white;
+    }
+
+}
