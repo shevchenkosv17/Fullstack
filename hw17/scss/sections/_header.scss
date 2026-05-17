@@ -19,7 +19,7 @@
         @media (max-width:map-get($breakpoints, mobile)) {
             grid-template-areas:
                 "contacts contacts"
-                "logo hamburger"
+                "logo hamburger";
         }
 
 
@@ -74,13 +74,9 @@
         @media (max-width:map-get($breakpoints, mobile)) {
             display: flex;
         }
-
-
     }
 
-  
 
-    &__hamburger {}
 
     &__languages {
         display: flex;
