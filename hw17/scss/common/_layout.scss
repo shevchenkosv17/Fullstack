@@ -1,18 +1,51 @@
 .container {
     .content {
-        width: map-get($content-widths,desktop-lg);
+        width: map-get($content-widths, desktop-lg);
         margin: 0 auto;
-        @media (max-width:map-get($breakpoints,desktop)) {
-            width: map-get($content-widths,desktop);
+
+        @media (max-width:map-get($breakpoints, desktop)) {
+            width: map-get($content-widths, desktop);
         }
-        @media (max-width:map-get($breakpoints,tablet-lg)) {
-            width: map-get($content-widths,tablet-lg);
+
+        @media (max-width:map-get($breakpoints, tablet-lg)) {
+            width: map-get($content-widths, tablet-lg);
         }
-        @media (max-width:map-get($breakpoints,tablet)) {
-            width: map-get($content-widths,tablet);
+
+        @media (max-width:map-get($breakpoints, tablet)) {
+            width: map-get($content-widths, tablet);
         }
-        @media (max-width:map-get($breakpoints,mobile)) {
-            width: map-get($content-widths,mobile);
+
+        @media (max-width:map-get($breakpoints, mobile)) {
+            width: map-get($content-widths, mobile);
+        }
+    }
+
+    &.wide-block {
+         @media (max-width:map-get($breakpoints, mobile)) {
+                padding-left: 0;
+                padding-right: 0;
+            }
+        
+        .content {
+            width: calc(map-get($content-widths, desktop-lg) + 50px);
+            margin: 0 auto;
+
+            @media (max-width:map-get($breakpoints, desktop)) {
+                width: calc(map-get($content-widths, desktop) + 50px);
+            }
+
+            @media (max-width:map-get($breakpoints, tablet-lg)) {
+                width: calc(map-get($content-widths, tablet-lg) + 50px);
+            }
+
+            @media (max-width:map-get($breakpoints, tablet)) {
+                width: 100%;
+            }
+
+            @media (max-width:map-get($breakpoints, mobile)) {
+                padding-left: 0;
+                padding-right: 0;
+            }
         }
     }
 }

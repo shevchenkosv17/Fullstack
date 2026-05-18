@@ -47,6 +47,7 @@
         @media (max-width:map-get($breakpoints, mobile)) {
             width: 70px;
             margin-top: 15px;
+            margin-bottom: 0;
 
             img {
                 width: 100%;
@@ -82,7 +83,6 @@
                 right: 15px;
             }
 
-            ;
             width: 100%;
             box-sizing: content-box;
             margin-left: -15px;

@@ -53,6 +53,11 @@
             padding-left: calc((100% - 648px) / 2);
             padding-right: calc((100% - 648px) / 2);
         }
+        @media (max-width: map-get($breakpoints, mobile)) {
+            
+            padding-left: 30px;
+            padding-right: 30px;
+        }
 
         &::-webkit-scrollbar {
             display: none;

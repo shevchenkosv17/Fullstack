@@ -61,6 +61,8 @@
     position: relative;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
+    
     &__image{
         position: absolute;
         margin: 0 auto;

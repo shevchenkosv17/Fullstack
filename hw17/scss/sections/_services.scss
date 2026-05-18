@@ -60,7 +60,12 @@
 
     &__offer {
         width: calc(100% / 3 - 40px);
-
+@media (max-width: map-get($breakpoints, tablet)) {
+          width: calc(100% / 2 - 40px)  
+        }
+@media (max-width: map-get($breakpoints, mobile)) {
+            width: 100%;
+        }
 
     }
 
