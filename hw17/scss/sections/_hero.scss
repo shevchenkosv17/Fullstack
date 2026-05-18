@@ -1,4 +1,5 @@
 .hero {
+    z-index: 3;
 
     .content {
         padding-bottom: 30px;
@@ -15,6 +16,24 @@
         text-align: center;
          transform: translateY(-20px);
 
+          @media (max-width:map-get($breakpoints,tablet)) {
+            margin: {
+            top: 269px;
+            bottom: 405px;
+        }
+        }
+          @media (max-width:map-get($breakpoints,mobile)) {
+            margin: {
+            top: 129px;
+            bottom: 159px;
+            left: auto;
+            right: auto;
+        }
+        width: 50%;
+       display: flex;
+       justify-content: center;
+       align-items: center;
+        }
 
     }
 
@@ -39,8 +58,16 @@
 
 }
 .top {
-    background-image: url(../image/hero.svg);
-    background-repeat: no-repeat ;
-    background-size: contain;
-    background-position: center center;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    &__image{
+        position: absolute;
+        margin: 0 auto;
+        align-self: center;
+        z-index: 1;
+        height: 100%;
+        
+
+    }
 }

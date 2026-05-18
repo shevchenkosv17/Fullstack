@@ -1,8 +1,99 @@
 .services {
-    .content{padding: {
-        top: 60px;
-        bottom: 60px;
-    };
+    .content {
+        padding: {
+
+            bottom: 60px;
+        }
+
+
 
     }
+
+
+    &__link {
+        margin-bottom: 10px;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 100%;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        color: #24A3FF;
+        position: relative;
+        display: flex;
+        align-items: center;
+        width: fit-content;
+
+        &:after {
+            content: '>';
+            position: absolute;
+            left: calc(100% + 5.5px);
+            display: block;
+
+        }
+
+        &:hover {
+            color: #F0145A;
+
+
+        }
+    }
+
+    &__title {
+        font-weight: 700;
+        font-size: 38px;
+        line-height: 100%;
+        margin-bottom: 60px;
+        pointer-events: none;
+
+        background: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%);
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        color: transparent
+    }
+
+    &__offers {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 60px;
+    }
+
+    &__offer {
+        width: calc(100% / 3 - 40px);
+
+
+    }
+
+
+    &__img {
+        width: 92px;
+        height: 92px;
+        margin-bottom: 44px;
+        background-color: white;
+        border-radius: 24px;
+        padding: 14px;
+
+    }
+
+    &__offer--title {
+        color: #24A3FF;
+        margin-bottom: 15px;
+        font-weight: 700;
+        font-size: 22px;
+        line-height: 100%;
+
+
+    }
+
+    &__description {
+
+        font-weight: 400;
+        font-size: 16px;
+
+        line-height: 26px;
+
+
+    }
+
+
 }

@@ -1,15 +1,27 @@
 body {
     @include text;
-    background: linear-gradient(228.57deg, #323264 11.93%, #323264 57.17%, #643E72 87.46%);
-    color: white;
+
+    color: black;
 
 }
 
-.hero__anchor{
+.header-background {
+    background: linear-gradient(228.57deg, #323264 11.93%, #323264 57.17%, #643E72 87.46%);
+    color: white;
+}
+
+
+
+.hero__anchor {
     display: inline-block;
     border: solid white;
     border-width: 0 2px 2px 0;
     padding: 5px;
     transform: rotate(45deg);
-    
+
 }
+
+.container{ @media (max-width:map-get($breakpoints,mobile)) {
+    padding-left: 30px;
+padding-right: 30px;
+}}

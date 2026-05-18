@@ -14,73 +14,77 @@
         margin: {
             left: auto;
             right: auto;
+        };
+
+        @media (max-width: map-get($breakpoints, tablet-lg)) {
+           width: 100%;
         }
 
-        ;
+   
+}
+
+&__tab-links {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 30px;
+    justify-content: center;
+    border-right: 4px solid grey;
+    ;
+    padding-right: 60px;
+}
+
+&__tab-link {
+
+    font-weight: 700;
+    font-size: 38px;
+    line-height: 100%;
+    white-space: nowrap;
+    color: white;
+
+    &--active {
+        pointer-events: none;
+
+
+        background: linear-gradient(90.13deg, #EF8080 0.84%, #F0145A 99.96%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        color: transparent
     }
 
-    &__tab-links {
-        flex: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: end;
-        gap: 30px;
-        justify-content: center;
-        border-right: 4px solid grey;
-        ;
-        padding-right: 60px;
-    }
-
-    &__tab-link {
-
-        font-weight: 700;
-        font-size: 38px;
-        line-height: 100%;
-
-        color: white;
-
-        &--active {
-            pointer-events: none;
-
-
-            background: linear-gradient(90.13deg, #EF8080 0.84%, #F0145A 99.96%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            color: transparent
-        }
-
-        &:hover {
-            background: rgba(240, 20, 90, 1);
-
-        }
-
-    }
-
-    &__tab-content {
-        display: flex;
-        justify-content: center;
-        flex-direction: column;
-        flex: 2;
-        padding-left: 60px;
-    }
-
-    &__tab-title {
-        margin-bottom: 30px;
-
-        font-weight: 700;
-        font-size: 30px;
-
-        line-height: 30px;
-
+    &:hover {
+        background: rgba(240, 20, 90, 1);
 
     }
 
-    &__tab-description {
-font-weight: 400;
-font-size: 19px;
-opacity: 0.8;
-line-height: 30px;
- 
+}
+
+&__tab-content {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    flex: 2;
+    padding-left: 60px;
+}
+
+&__tab-title {
+    margin-bottom: 30px;
+
+    font-weight: 700;
+    font-size: 30px;
+
+    line-height: 30px;
+
+
+}
+
+&__tab-description {
+    font-weight: 400;
+    font-size: 19px;
+    opacity: 0.8;
+    line-height: 30px;
+
 }
 }
