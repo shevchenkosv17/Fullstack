@@ -48,17 +48,18 @@ body {
 
 }
 
-.container{ @media (max-width:map-get($breakpoints,mobile)) {
+.news {
+  // Медиа-запрос для мобильных устройств
+  @media (max-width: map-get($breakpoints, mobile)) {
     padding-left: 30px;
-padding-right: 30px;
-}}
-
-.wide-block{
-    margin: {
-        top: 50px;
-        bottom: 50px;
-    };
-    .content{
-        background-color: aqua;
+    padding-right: 30px;
+    
+    // На мобильных выстраиваем картинку и текст друг под друга
+    .content {
+      flex-direction: column;
+      gap: 16px;
     }
+  }
+
+  // Контейнер-обертка для флексбокса
 }
