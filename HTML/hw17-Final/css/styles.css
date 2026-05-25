@@ -1,3 +1,4 @@
+@charset "UTF-8";
 .container .content {
   width: 1600px;
   margin: 0 auto;
@@ -636,12 +637,28 @@ body {
   }
 }
 .news__team {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  padding-right: 10px;
   font-weight: 700;
   font-size: 14px;
   line-height: 100%;
   color: rgb(36, 163, 255);
   text-transform: uppercase;
   padding-bottom: 5px;
+}
+.news__team:after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: calc(50% - 7px);
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-top: 3px solid rgb(36, 163, 255);
+  border-right: 3px solid rgb(36, 163, 255);
+  transform: rotate(45deg);
 }
 .news__description h2 {
   margin: 0;
@@ -664,6 +681,32 @@ body {
   white-space: pre-line;
   color: #666;
   padding-top: 30px;
+}
+
+.dots {
+  display: flex;
+  justify-content: center; /* Выравнивание по центру */
+  align-items: center;
+  gap: 15px; /* Шаг между точками */
+  margin-top: 30px; /* Отступ вниз от серой плашки */
+  width: 100%;
+}
+.dots__item {
+  display: block;
+  width: 16px; /* Ширина кружка */
+  height: 16px; /* Высота кружка */
+  border-radius: 50%; /* Скругление */
+  background-color: rgb(36, 163, 255); /* Насыщенный синий цвет */
+  opacity: 0.2; /* Неактивные точки приглушены */
+  cursor: pointer;
+  transition: opacity 0.3s ease;
+  /* Активное состояние для первой точки */
+}
+.dots__item--active {
+  opacity: 1; /* Горит на 100% яркости */
+}
+.dots__item:hover {
+  opacity: 0.6; /* Эффект наведения курсора */
 }
 
 /*# sourceMappingURL=styles.css.map */
