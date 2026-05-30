@@ -97,36 +97,37 @@
         font-size: 16px;
         line-height: 1.5;
         white-space: pre-line;
-        color: #666;
+        color: #B3B3BA;
         padding-top: 30px;
+       opacity: 0.6;
     }
     
 }
 .dots {
     display: flex;
-    justify-content: center;   /* Выравнивание по центру */
+    justify-content: center;   
     align-items: center;
-    gap: 15px;                 /* Шаг между точками */
-    margin-top: 30px;          /* Отступ вниз от серой плашки */
+    gap: 15px;                 
+    margin-top: 30px;        
     width: 100%;
 
     &__item {
         display: block;
-        width: 16px;            /* Ширина кружка */
-        height: 16px;           /* Высота кружка */
-        border-radius: 50%;     /* Скругление */
-        background-color: rgba(36, 163, 255, 1); /* Насыщенный синий цвет */
-        opacity: 0.2;           /* Неактивные точки приглушены */
+        width: 16px;            
+        height: 16px;          
+        border-radius: 50%;     
+        background-color: rgba(36, 163, 255, 1); 
+        opacity: 0.2;           
         cursor: pointer;
         transition: opacity 0.3s ease;
 
-        /* Активное состояние для первой точки */
+        
         &--active {
-            opacity: 1;         /* Горит на 100% яркости */
+            opacity: 1;      
         }
 
         &:hover {
-            opacity: 0.6;       /* Эффект наведения курсора */
+            opacity: 0.6;      
         }
     }
 }

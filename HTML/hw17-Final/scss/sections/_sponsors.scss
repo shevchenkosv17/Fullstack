@@ -1,0 +1,105 @@
+.sponsors {
+    margin-top: 60px;
+    margin-bottom: 60px;
+
+    &__title {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 100%;
+        display: flex;
+        justify-content: center;
+        text-transform: uppercase;
+        margin-bottom: 30px;
+        color: #32323D;
+    }
+
+    .content {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        border-radius: 12px;
+        overflow: hidden;
+        
+
+        width: map-get($content-widths, desktop-lg);
+        width: 100%;
+
+
+        @media (max-width: map-get($breakpoints, tablet)) {
+            grid-template-columns: repeat(3, 1fr);
+            width: 100%;
+        }
+
+        @media (max-width: map-get($breakpoints, mobile)) {
+            grid-template-columns: 1fr;
+            width: 100%;
+        }
+    }
+
+    &__logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 120px;
+        box-sizing: border-box;
+
+        img {
+            width: 80%;
+            max-height: 50px;
+            height: auto;
+            object-fit: contain;
+        }
+
+        &:hover {
+            opacity: 0.85;
+        }
+
+        &.sponsor-1 {
+            background-color: #1C4280;
+        }
+
+        &.sponsor-2 {
+            background-color: #143646;
+        }
+
+        &.sponsor-3 {
+            background-color: #F48B30;
+        }
+
+        &.sponsor-4 {
+            background-color: #9E4DC3;
+        }
+
+        &.sponsor-5 {
+            background-color: #FD9339;
+        }
+
+        &.sponsor-6 {
+            background-color: #E2E2E4;
+        }
+
+        &.sponsor-7 {
+            background-color: #C71C36;
+        }
+
+        &.sponsor-8 {
+            background-color: #DCF3F9;
+        }
+
+        &.sponsor-9 {
+            background-color: #EAEAEA;
+        }
+
+        &.sponsor-10 {
+            background-color: #282240;
+        }
+
+        &.sponsor-11 {
+            background-color: #1D4568;
+        }
+
+        &.sponsor-12 {
+            background-color: #000000;
+        }
+    }
+
+}
