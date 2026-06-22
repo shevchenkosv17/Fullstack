@@ -1,0 +1,27 @@
+.main-menu {
+    background-color: $gray-bg;
+    padding: 17px 0 16px;
+
+
+    .content {
+        .menu {
+            display: flex;
+            justify-content: center;
+
+
+            ul {
+                display: flex;
+                gap: 30px;
+
+                a {
+                    @include normal;
+                    color: $grey;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+            }
+        }
+    }
+}

@@ -1,0 +1,54 @@
+.hero {
+    background-color: $highlight;
+    color: $white;
+     overflow: hidden;
+
+
+    .content {
+        padding: 192px 0 193px;
+        position: relative;
+        display: flex ;
+        flex-direction: column;
+        justify-content: center;
+       
+    }
+
+    .title {
+        @iclude bold;
+        font-size: 48px;
+        margin-bottom: 50px;
+
+    }
+
+    .description {
+        margin-bottom: 30px;
+        width: 258px;
+
+
+    }
+
+    .cta {
+
+        display: flex;
+        padding: 13px 55px 12px;
+        border: 2px solid $white;
+        border-radius: 40px;
+        color: $white;
+        letter-spacing: 5%;
+        width: fit-content;
+
+    }
+
+    .product {
+        border: 85px solid rgb(245, 118, 153);
+        background: rgb(249, 173, 194);
+        border-radius: 50%;
+        width: 900px;
+        height: 900px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: -60px;
+    }
+}

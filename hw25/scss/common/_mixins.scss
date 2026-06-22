@@ -1,0 +1,25 @@
+@mixin normal {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400; 
+    font-size: 14px;
+    line-height: 1;
+}
+@mixin text {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 400; 
+    line-height: 141%;
+    font-size: 14px;
+    color: $grey;
+}
+@mixin semibold {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500; 
+    
+    line-height: 1;
+}
+@mixin bold {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700; 
+   
+    line-height: 1;
+}

@@ -1,0 +1,15 @@
+.container {
+    .content {
+        width: $desktop;
+        margin: 0 auto;    }
+    @media  (max-width: $dt-breakpoint) {
+        .content {
+            width: $tablet;
+        }
+    }
+    @media  (max-width: $mobile) {
+        .content {
+            width: $mobile;
+        }
+    }
+}

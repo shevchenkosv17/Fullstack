@@ -1,0 +1,28 @@
+.sub-menu {
+   
+    padding: 30px 0 ;
+
+
+    .content {
+        .menu {
+            display: flex;
+            justify-content: center;
+
+
+            ul {
+                display: flex;
+                gap: 40px;
+
+                a {
+                    @include normal;
+                    color: $black;
+                    font-size: 16px;
+                    &:hover {
+                        text-decoration: underline;
+                    }
+                }
+
+            }
+        }
+    }
+}
