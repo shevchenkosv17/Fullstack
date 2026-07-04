@@ -1,0 +1,137 @@
+.publications__title {
+  margin: 60px auto;
+  width: map-get($content-widths, desktop-lg);
+  font-family: sans-serif;
+
+  @media (max-width: map-get($breakpoints, desktop)) {
+    width: map-get($content-widths, desktop);
+  }
+
+  @media (max-width: map-get($breakpoints, tablet-lg)) {
+    width: map-get($content-widths, tablet-lg);
+  }
+
+  @media (max-width: map-get($breakpoints, tablet)) {
+    width: map-get($content-widths, tablet);
+  }
+
+  @media (max-width: map-get($breakpoints, mobile)) {
+    width: map-get($content-widths, mobile);
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .publications__name {
+    color: #24479e;
+    font-size: 14px;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    letter-spacing: 1px;
+    display: inline-block;
+
+    &::after {
+      content: " >";
+    }
+  }
+
+  .publication__description {
+    h2 {
+      color: #e11e3b;
+      font-size: 38px;
+      margin: 0 0 30px 0;
+      font-weight: 700;
+    }
+  }
+
+  .content {
+    display: flex !important;
+    grid-template-columns: none !important;
+    justify-content: space-between;
+    gap: 30px;
+    width: 100%;
+    
+    /* Разрешаем карточкам переноситься на новую строку при нехватке места */
+    flex-wrap: wrap; 
+
+    @media (max-width: map-get($breakpoints, mobile)) {
+      gap: 20px;
+    }
+  }
+}
+
+.publication__card_item {
+  background-color: #ffffff;
+  /* На компьютере каждая карточка занимает треть строки */
+  width: calc(33.333% - 20px); 
+  display: flex;
+  flex-direction: column;
+  border: 1px solid #e6e6f0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+
+  /* На планшете перестраиваем: первые две делят строку пополам, третья занимает 100% */
+  @media (max-width: map-get($breakpoints, tablet)) {
+    width: calc(50% - 15px); /* Две карточки в ряд с учетом gap */
+
+    &:nth-child(3) {
+      width: 100%; /* Третья карточка падает вниз и растягивается на всю ширину */
+    }
+  }
+
+  /* На мобильных телефонах все карточки встают строго в один столбик */
+  @media (max-width: map-get($breakpoints, mobile)) {
+    width: 100% !important; 
+  }
+
+  .publication__card_img {
+    height: 200px;
+    overflow: hidden;
+    width: 100%;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .card-item__body {
+    padding: 30px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+
+  .card-item__title {
+    color: #24479e;
+    font-size: 16px;
+    line-height: 1.4;
+    margin: 0 0 10px 0;
+    font-weight: 700;
+
+    @media (min-width: calc(map-get($breakpoints, tablet) + 1px)) {
+      min-height: 44px;
+    }
+  }
+
+  .card-item__date {
+    color: #b3b3ba;
+    font-size: 12px;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 25px;
+    font-weight: 700;
+  }
+
+  .card-item__text {
+    color: $black;
+    font-size: 14px;
+    line-height: 1.6;
+    margin: 0;
+    padding-top: 25px;
+    border-top: 4px solid #e6e6f0;
+    flex-grow: 1;
+  }
+}

@@ -1,5 +1,4 @@
 .news {
-
     margin-top: 60px;
     margin-bottom: 60px;
 
@@ -11,6 +10,7 @@
         border-radius: 12px;
         overflow: hidden;
 
+        /* Включаем перенос в один столбик на обычных планшетах */
         @media (max-width: map-get($breakpoints, tablet)) {
             flex-direction: column;
             gap: 0;
@@ -20,10 +20,32 @@
     &__foto {
         flex-shrink: 0;
         width: 400px;
+        height: 340px;
 
+        @media (max-width: map-get($breakpoints, desktop)) {
+            width: 280px;
+            height: 280px;
+            border-radius: 12px;
+            margin: 40px 0 40px 40px;
+        }
+
+        @media (max-width: map-get($breakpoints, tablet-lg)) {
+            width: 35%;
+            height: auto;
+            aspect-ratio: 3 / 4;
+            margin: 0;
+            border-radius: 0;
+        }
+
+        /* Когда на планшете блок падает в столбик, делаем фото вытянутым прямоугольником */
         @media (max-width: map-get($breakpoints, tablet)) {
             width: 100%;
-            height: 350px;
+            aspect-ratio: 16 / 10; /* Картинка станет невысокой и широкой */
+        }
+
+        /* На мобильных телефонах пускай будет чуть ближе к квадрату, как в макете */
+        @media (max-width: map-get($breakpoints, mobile)) {
+            aspect-ratio: 16 / 13;
         }
 
         img {
@@ -31,6 +53,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
+            object-position: center center;
         }
     }
 
@@ -38,27 +61,41 @@
         flex-grow: 1;
         min-width: 0;
         padding: 30px 40px 30px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
 
+        @media (max-width: map-get($breakpoints, desktop)) {
+            padding: 40px;
+        }
+
+        @media (max-width: map-get($breakpoints, tablet-lg)) {
+            width: 65%;
+        }
+
+        /* Возвращаем тексту полную ширину строки на планшетах */
         @media (max-width: map-get($breakpoints, tablet)) {
             width: 100%;
+            padding: 30px;
+        }
+
+        @media (max-width: map-get($breakpoints, mobile)) {
             padding: 24px;
         }
-    
-      }
+    }
 
-       &__team {
+    &__team {
         display: inline-flex;       
         align-items: center;        
         position: relative;         
         padding-right: 10px;       
-        
         font-weight: 700;
         font-size: 14px;
         line-height: 100%;
         color: rgba(36, 163, 255, 1);
         text-transform: uppercase;
         padding-bottom: 5px;
-
+        margin-bottom: 15px;
         
         &:after {
             content: '';
@@ -66,7 +103,6 @@
             right: 0;               
             top: calc(50% - 7px);
             display: block;
-           
             width: 6px;             
             height: 6px;           
             border-top: 3px solid rgba(36, 163, 255, 1);   
@@ -81,14 +117,17 @@
             font-weight: 700;
             font-size: 38px;
             line-height: 1.4;
-
             background: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
 
+            @media (max-width: map-get($breakpoints, tablet)) {
+                font-size: 30px;
+            }
+
             @media (max-width: map-get($breakpoints, mobile)) {
-                font-size: 24px;
+                font-size: 22px;
             }
         }
     }
@@ -99,10 +138,15 @@
         white-space: pre-line;
         color: #B3B3BA;
         padding-top: 30px;
-       opacity: 0.6;
+        opacity: 0.6;
+
+        @media (max-width: map-get($breakpoints, mobile)) {
+            padding-top: 20px;
+            font-size: 14px;
+        }
     }
-    
 }
+
 .dots {
     display: flex;
     justify-content: center;   
@@ -120,7 +164,6 @@
         opacity: 0.2;           
         cursor: pointer;
         transition: opacity 0.3s ease;
-
         
         &--active {
             opacity: 1;      
