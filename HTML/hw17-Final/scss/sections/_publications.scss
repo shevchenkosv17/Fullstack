@@ -1,7 +1,7 @@
 .publications__title {
   margin: 60px auto;
   width: map-get($content-widths, desktop-lg);
-  font-family: sans-serif;
+
 
   @media (max-width: map-get($breakpoints, desktop)) {
     width: map-get($content-widths, desktop);
@@ -22,27 +22,44 @@
   }
 
   .publications__name {
-    color: #24479e;
-    font-size: 14px;
+    color: #24A3FF;
     font-weight: 700;
-    text-transform: uppercase;
-    margin-bottom: 5px;
-    letter-spacing: 1px;
-    display: inline-block;
+    font-size: 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    white-space: nowrap;
 
-    &::after {
-      content: " >";
+    &:after {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-top: 2px solid rgba(36, 163, 255, 1);
+      border-right: 2px solid rgba(36, 163, 255, 1);
+      transform: rotate(45deg);
+      margin-left: 2px;
+      margin-top: -2px;
     }
+
   }
 
   .publication__description {
     h2 {
-      color: #e11e3b;
-      font-size: 38px;
-      margin: 0 0 30px 0;
+      margin-top: 10px;
+      margin-bottom: 30px;
       font-weight: 700;
+      font-size: 38px;
+      width: max-content;
+      padding-top: 5px;
+      padding-bottom: 10px;
+      background: linear-gradient(90.13deg, #F0145A 0.84%, #EF8080 99.96%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
     }
   }
+
 
   .content {
     display: flex !important;
@@ -50,9 +67,7 @@
     justify-content: space-between;
     gap: 30px;
     width: 100%;
-    
-    /* Разрешаем карточкам переноситься на новую строку при нехватке места */
-    flex-wrap: wrap; 
+    flex-wrap: wrap;
 
     @media (max-width: map-get($breakpoints, mobile)) {
       gap: 20px;
@@ -62,8 +77,7 @@
 
 .publication__card_item {
   background-color: #ffffff;
-  /* На компьютере каждая карточка занимает треть строки */
-  width: calc(33.333% - 20px); 
+  width: calc(33.333% - 20px);
   display: flex;
   flex-direction: column;
   border: 1px solid #e6e6f0;
@@ -71,18 +85,17 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
   overflow: hidden;
 
-  /* На планшете перестраиваем: первые две делят строку пополам, третья занимает 100% */
+
   @media (max-width: map-get($breakpoints, tablet)) {
-    width: calc(50% - 15px); /* Две карточки в ряд с учетом gap */
+    width: calc(50% - 15px);
 
     &:nth-child(3) {
-      width: 100%; /* Третья карточка падает вниз и растягивается на всю ширину */
+      width: 100%;
     }
   }
 
-  /* На мобильных телефонах все карточки встают строго в один столбик */
   @media (max-width: map-get($breakpoints, mobile)) {
-    width: 100% !important; 
+    width: 100% !important;
   }
 
   .publication__card_img {
@@ -105,11 +118,9 @@
   }
 
   .card-item__title {
-    color: #24479e;
-    font-size: 16px;
-    line-height: 1.4;
-    margin: 0 0 10px 0;
+    color: #24A3FF;
     font-weight: 700;
+    font-size: 16px;
 
     @media (min-width: calc(map-get($breakpoints, tablet) + 1px)) {
       min-height: 44px;
@@ -117,20 +128,21 @@
   }
 
   .card-item__date {
-    color: #b3b3ba;
+    color: #B3B3BA;
     font-size: 12px;
     text-transform: uppercase;
     display: block;
-    margin-bottom: 25px;
+    margin-top: 15px;
+    margin-bottom: 15px;
     font-weight: 700;
   }
 
   .card-item__text {
     color: $black;
+    font-weight: 400;
     font-size: 14px;
-    line-height: 1.6;
-    margin: 0;
-    padding-top: 25px;
+    line-height: 22px;
+    padding-top: 15px;
     border-top: 4px solid #e6e6f0;
     flex-grow: 1;
   }

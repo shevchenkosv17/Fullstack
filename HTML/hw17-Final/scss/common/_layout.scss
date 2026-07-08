@@ -16,15 +16,18 @@
         }
 
         @media (max-width:map-get($breakpoints, mobile)) {
-            width: map-get($content-widths, mobile);
+            width: 100%;
+            padding-left: 15px;
+            padding-right: 15px;
+            box-sizing: border-box;
         }
     }
 
     &.wide-block {
-         @media (max-width:map-get($breakpoints, mobile)) {
-                padding-left: 0;
-                padding-right: 0;
-            }
+        @media (max-width:map-get($breakpoints, mobile)) {
+            padding-left: 0;
+            padding-right: 0;
+        }
         
         .content {
             width: calc(map-get($content-widths, desktop-lg) + 50px);
@@ -45,6 +48,7 @@
             @media (max-width:map-get($breakpoints, mobile)) {
                 padding-left: 0;
                 padding-right: 0;
+                width: 100%;
             }
         }
     }

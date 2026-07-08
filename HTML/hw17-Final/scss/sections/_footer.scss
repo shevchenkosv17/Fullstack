@@ -19,9 +19,10 @@
   }
 
   @media (max-width: map-get($breakpoints, mobile)) {
-    width: map-get($content-widths, mobile);
+    width: 100%;
     padding-left: 20px;
     padding-right: 20px;
+    box-sizing: border-box;
   }
 
   .container {
@@ -33,6 +34,14 @@
     flex-direction: column;
     gap: 20px;
     width: 100%;
+
+    @media (max-width: map-get($breakpoints, tablet)) {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center !important;
+      gap: 30px !important;
+    }
   }
 
   &__row {
@@ -42,32 +51,46 @@
     width: 100%;
 
     @media (max-width: map-get($breakpoints, tablet)) {
-      flex-direction: column;
-      gap: 15px;
-      text-align: center;
+      display: contents !important;
     }
   }
 
   &__address {
-    color: #32323d;
+    color: #323264;
+    font-weight: 400;
     font-size: 16px;
     display: flex;
     align-items: center;
     gap: 10px;
 
-    @media (max-width: map-get($breakpoints, mobile)) {
-      flex-direction: column;
-      gap: 5px;
+    & > *:not(:last-child)::after {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background-color: #b3b3ba;
+      border-radius: 50%;
+      margin-left: 10px;
+    }
+
+    @media (max-width: map-get($breakpoints, tablet)) {
+      flex-direction: column !important;
+      gap: 10px !important;
+      order: 1 !important;
+      
+      & > *:not(:last-child)::after {
+        display: none !important;
+      }
     }
   }
 
   &__map-link {
-    color: #24479e;
+    color: #24A3FF;
     font-size: 12px;
     font-weight: 700;
     text-transform: uppercase;
-    text-decoration: none;
     letter-spacing: 1px;
+    text-decoration: none;
 
     &:hover {
       text-decoration: underline;
@@ -75,22 +98,41 @@
   }
 
   &__copyright {
-    color: #b3b3ba;
+    color: #B3B3BA;
+    font-weight: 400;
     font-size: 16px;
+    text-align: right;
 
     @media (max-width: map-get($breakpoints, tablet)) {
-      order: 3;
+      order: 3 !important;
+      margin-top: 10px !important;
+      text-align: center !important;
     }
   }
 
   &__contacts {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
 
-    @media (max-width: map-get($breakpoints, mobile)) {
-      flex-direction: column;
-      gap: 15px;
+    & > *:not(:last-child)::after {
+      content: '';
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background-color: #b3b3ba;
+      border-radius: 50%;
+      margin-left: 10px;
+    }
+
+    @media (max-width: map-get($breakpoints, tablet)) {
+      flex-direction: column !important;
+      gap: 15px !important;
+      order: 2 !important;
+
+      & > *:not(:last-child)::after {
+        display: none !important;
+      }
     }
   }
 
@@ -112,8 +154,8 @@
   &__phone {
     color: #32323d;
     font-weight: 700;
-    font-size: 18px;
-    text-decoration: none;
+    font-size: 16px;
+    text-align: right;
 
     &:hover {
       color: #24479e;
@@ -121,7 +163,7 @@
   }
 
   &__email {
-    color: #24479e;
+    color: #24A3FF;
     font-weight: 700;
     font-size: 16px;
     text-decoration: none;

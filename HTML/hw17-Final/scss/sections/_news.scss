@@ -37,13 +37,13 @@
             border-radius: 0;
         }
 
-        /* Когда на планшете блок падает в столбик, делаем фото вытянутым прямоугольником */
+        
         @media (max-width: map-get($breakpoints, tablet)) {
             width: 100%;
-            aspect-ratio: 16 / 10; /* Картинка станет невысокой и широкой */
+            aspect-ratio: 16 / 10; 
         }
 
-        /* На мобильных телефонах пускай будет чуть ближе к квадрату, как в макете */
+       
         @media (max-width: map-get($breakpoints, mobile)) {
             aspect-ratio: 16 / 13;
         }
@@ -73,7 +73,6 @@
             width: 65%;
         }
 
-        /* Возвращаем тексту полную ширину строки на планшетах */
         @media (max-width: map-get($breakpoints, tablet)) {
             width: 100%;
             padding: 30px;
@@ -84,32 +83,30 @@
         }
     }
 
-    &__team {
-        display: inline-flex;       
-        align-items: center;        
-        position: relative;         
-        padding-right: 10px;       
-        font-weight: 700;
-        font-size: 14px;
-        line-height: 100%;
-        color: rgba(36, 163, 255, 1);
-        text-transform: uppercase;
-        padding-bottom: 5px;
-        margin-bottom: 15px;
-        
-        &:after {
-            content: '';
-            position: absolute;
-            right: 0;               
-            top: calc(50% - 7px);
-            display: block;
-            width: 6px;             
-            height: 6px;           
-            border-top: 3px solid rgba(36, 163, 255, 1);   
-            border-right: 3px solid rgba(36, 163, 255, 1);
-            transform: rotate(45deg);                       
-        }
+  &__team {
+    display: inline-flex;       
+    align-items: center;        
+    gap: 8px;         
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 100%;
+    color: rgba(36, 163, 255, 1);
+    text-transform: uppercase;
+    padding-bottom: 5px;
+    margin-bottom: 15px;
+    
+    &:after {
+        content: '';
+        display: block;
+        width: 6px;             
+        height: 6px;           
+        border-top: 2px solid rgba(36, 163, 255, 1);   
+        border-right: 2px solid rgba(36, 163, 255, 1);
+        transform: rotate(45deg);     
+        margin-top: -2px; 
     }
+}
+
 
     &__description {
         h2 {
