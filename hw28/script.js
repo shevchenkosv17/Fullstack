@@ -1,8 +1,8 @@
 class Slider {
-    #sliderWidth = null;
     #sliderRotationInterval = null;
     #track = null;
     #slides = null;
+    #slide = null;
     #nextButton = null;
     #prevButton = null;
     #dotsContainer = null;
@@ -11,13 +11,14 @@ class Slider {
     #dots = null;
     #startX = 0;
     #isMoving = false;
+    #timer = null;
 
     constructor(options = {}) {
-        this.#sliderWidth = options.sliderWidth;
         this.#sliderRotationInterval = options.sliderRotationInterval;
 
         this.#track = document.getElementById(options.track);
         this.#slides = document.querySelectorAll(options.slides);
+        this.#slide = document.getElementById(options.slide);
         this.#nextButton = document.getElementById(options.nextButton);
         this.#prevButton = document.getElementById(options.prevButton);
         this.#dotsContainer = document.getElementById(options.dotsContainer);
@@ -28,11 +29,31 @@ class Slider {
         this.#initDots();
         this.#attachEventListeners();
         this.#attachTouchEventListeners();
-        this.#startRotation();
+        this.startRotation();
+
+        window.addEventListener('resize', () => {
+            this.#track.style.transition = "none";
+            this.#track.style.transform = `translateX(-${this.#currentSlideIndex * this.#sliderWidth}px)`;
+        });
     }
 
-    #startRotation() {
-        setInterval(() => this.#nextSlide(), this.#sliderRotationInterval);
+    get #sliderWidth() {
+        return this.#slide ? this.#slide.clientWidth : 0;
+    }
+
+    startRotation() {
+        if (this.#timer) return;
+        this.#timer = setInterval(() => this.#nextSlide(), this.#sliderRotationInterval);
+    }
+
+    stopRotation() {
+        clearInterval(this.#timer);
+        this.#timer = null;
+    }
+
+    #restartRotation() {
+        this.stopRotation();
+        this.startRotation();
     }
 
     #nextSlide() {
@@ -52,8 +73,26 @@ class Slider {
     }
 
     #attachEventListeners() {
-        this.#nextButton.addEventListener('click', () => this.#nextSlide());
-        this.#prevButton.addEventListener('click', () => this.#prevSlide());
+        this.#nextButton.addEventListener('click', () => {
+            this.#nextSlide();
+            this.#restartRotation();
+        });
+        this.#prevButton.addEventListener('click', () => {
+            this.#prevSlide();
+            this.#restartRotation();
+        });
+
+        if (this.#slide) {
+            this.#slide.addEventListener('mouseover', () => {
+                console.log('MOUSE >>>');
+                this.stopRotation();
+            });
+
+            this.#slide.addEventListener('mouseout', () => {
+                console.log('MOUSE <<<');
+                this.startRotation();
+            });
+        }
     }
 
     #initDots() {
@@ -68,6 +107,7 @@ class Slider {
             dot.addEventListener('click', () => {
                 this.#currentSlideIndex = index;
                 this.#showSlide(index);
+                this.#restartRotation();
             });
         });
 
@@ -87,14 +127,15 @@ class Slider {
             if (event.touches.length > 1) {
                 return;
             }
-            this.#startX = event.touches[0].clientX;
+            this.#startX = event.touches.clientX;
             this.#isMoving = true;
             this.#track.style.transition = "none";
+            this.stopRotation();
         });
 
         this.#track.addEventListener('touchmove', (event) => {
             if (!this.#isMoving) return;
-            const dx = event.touches[0].clientX - this.#startX;
+            const dx = event.touches.clientX - this.#startX;
             const currentOffset = -(this.#currentSlideIndex * this.#sliderWidth) + dx;
             this.#track.style.transform = `translateX(${currentOffset}px)`;
         });
@@ -102,25 +143,32 @@ class Slider {
         this.#track.addEventListener('touchend', (event) => {
             if (!this.#isMoving) return;
             this.#isMoving = false;
-            const endX = event.changedTouches[0].clientX;
+            const endX = event.changedTouches.clientX;
             const dX = endX - this.#startX;
-            if (dX > 200) {
+            if (dX > 50) {
                 this.#prevSlide();
-            } else if (dX < -200) {
+            } else if (dX < -50) {
                 this.#nextSlide();
             } else {
                 this.#showSlide(this.#currentSlideIndex);
             }
+            this.startRotation();
         });
     }
 }
 
 const slider = new Slider({
-    sliderWidth: 960,
     sliderRotationInterval: 5000,
     track: 'slider-track',
     slides: '.slide',
+    slide: 'slider',
     nextButton: 'next',
     prevButton: 'prev',
     dotsContainer: 'dots',
 });
+
+const play = document.getElementById('start');
+const stop = document.getElementById('stop');
+
+if (play) play.addEventListener('click', () => slider.startRotation());
+if (stop) stop.addEventListener('click', () => slider.stopRotation());
