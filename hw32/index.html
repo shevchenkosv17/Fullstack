@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Пошук Фільмів</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="search-container">
+        <h1>🎬 Світ Кіно</h1>
+        
+        <input type="text" id="searchInput" placeholder="Почніть вводити назву фільму..." autocomplete="off">
+        
+        <div id="resultsGrid" class="results-grid">
+            
+            <div id="movieCardSample" class="movie-card" style="display: none;">
+                <img src="" alt="" class="movie-poster">
+                <div class="movie-info">
+                    <h3 class="movie-title"></h3>
+                    <p class="movie-meta">Рік: <span class="movie-year"></span></p>
+                    <p class="movie-meta">Тип: <span class="movie-type"></span></p>
+                    <p class="movie-meta">Рейтинг: <span class="rating-value"></span></p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
