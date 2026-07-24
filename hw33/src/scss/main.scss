@@ -1,0 +1,34 @@
+body {
+  background-color: #f4f7f6;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+
+  .container {
+    text-align: center;
+
+    h1 {
+      color: #2c3e50;
+      font-size: 2.5rem;
+      
+      .badge {
+        border: 2px solid #3498db;
+        border-radius: 6px;
+        padding: 2px 12px;
+        background-color: #e8f4fd;
+        color: #2980b9;
+        display: inline-block;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background-color: #3498db;
+          color: #ffffff;
+          transform: scale(1.05);
+        }
+      }
+    }
+  }
+}
