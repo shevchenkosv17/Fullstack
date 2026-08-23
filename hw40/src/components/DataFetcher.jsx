@@ -6,7 +6,7 @@ function DataFetcher() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    fetch('https://typicode.com')
+    fetch('https://jsonplaceholder.typicode.com/todos?_limit=10')
       .then((response) => {
         if (!response.ok) {
           throw new Error('Помилка завантаження даних');
