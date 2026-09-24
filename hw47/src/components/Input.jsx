@@ -1,14 +1,16 @@
-export default function Input({ id, label, name, type = 'text', value, onChange, onBlur, error, touched, placeholder }) {
-  const isInvalid = touched && error;
+import { forwardRef } from 'react';
+
+const Input = forwardRef(({ id, label, name, type = 'text', onChange, onBlur, error, touched, placeholder }, ref) => {
+  const isInvalid = error;
   
   return (
     <div className="form-group">
       <label htmlFor={id}>{label}</label>
       <input
+        ref={ref}
         id={id}
         name={name}
         type={type}
-        value={value}
         onChange={onChange}
         onBlur={onBlur}
         placeholder={placeholder}
@@ -23,4 +25,8 @@ export default function Input({ id, label, name, type = 'text', value, onChange,
       )}
     </div>
   );
-}
+});
+
+Input.displayName = 'Input';
+
+export default Input;
