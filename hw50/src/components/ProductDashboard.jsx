@@ -2,10 +2,10 @@ import { useState, useMemo, useCallback } from 'react';
 import ProductItem from './ProductItem';
 
 const INITIAL_PRODUCTS = [
-  { id: 1, name: 'Ноутбук Pro', category: 'Електроніка', rating: 4.8, isFavorite: false },
-  { id: 2, name: 'Смартфон X', category: 'Електроніка', rating: 4.5, isFavorite: false },
-  { id: 3, name: 'Кавомашина Ultra', category: 'Побутова техніка', rating: 4.2, isFavorite: false },
-  { id: 4, name: 'Крісло Ергономічне', category: 'Меблі', rating: 4.7, isFavorite: false },
+  { id: 1, name: 'Ноутбук ASUS', category: 'Електроніка', rating: 4.8, isFavorite: false },
+  { id: 2, name: 'Смартфон Apple', category: 'Електроніка', rating: 4.5, isFavorite: false },
+  { id: 3, name: 'Кавомашина Philips', category: 'Побутова техніка', rating: 4.2, isFavorite: false },
+  { id: 4, name: 'Крісло геймерське', category: 'Меблі', rating: 4.7, isFavorite: false },
 ];
 
 export default function ProductDashboard() {
@@ -17,7 +17,7 @@ export default function ProductDashboard() {
     setProducts((prevProducts) =>
       prevProducts.map((p) => (p.id === id ? { ...p, isFavorite: !p.isFavorite } : p))
     );
-  }, []);
+  },);
 
   const filteredProducts = useMemo(() => {
     return products
@@ -37,14 +37,14 @@ export default function ProductDashboard() {
   }, [products, searchTerm]);
 
   return (
-    <div className={`dashboard ${theme}`} style={{ padding: '20px', background: theme === 'dark' ? '#1a202c' : '#fff' }}>
+    <div className={`dashboard ${theme}`} style={{ padding: '20px' }}>
       <h2>Панель продуктів</h2>
       
-      <button onClick={() => setTheme((t) => (t === 'light' ? 'dark' : 'light'))}>
-        Змінити тему ({theme})
+      <button className="theme-btn" onClick={() => setTheme((t) => (t === 'light' ? 'dark' : 'light'))}>
+        {theme === 'light' ? '🌙' : '☀️'}
       </button>
 
-      <div style={{ margin: '20px 0' }}>
+      <div className="search-container" style={{ margin: '20px 0' }}>
         <input
           type="text"
           placeholder="Пошук продукту..."
