@@ -1,0 +1,21 @@
+$breakpoint-desktop: 1600px;
+$breakpoint-tablet: 1280px;
+$breakpoint-phone: 768px;
+
+$breakpoints: (
+  desktop: $breakpoint-desktop,
+  tablet: $breakpoint-tablet,
+  phone: $breakpoint-phone,
+);
+
+@mixin media-down($device) {
+  $breakpoint: map-get($breakpoints, $device);
+
+  @if $breakpoint == null {
+    @error "Unknown breakpoint '#{$device}'. Available: #{map-keys($breakpoints)}";
+  }
+
+  @media (max-width: $breakpoint) {
+    @content;
+  }
+}

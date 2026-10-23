@@ -1,0 +1,29 @@
+{
+  "cats": [
+    {
+      "key": "novyny-ta-trendy",
+      "title": "Новини та тренди",
+      "description": "що відбувається у світі технологій"
+    },
+    {
+      "key": "oglyady-gadzhetiv",
+      "title": "Огляди гаджетів",
+      "description": "смартфони, ноутбуки, аксесуари"
+    },
+    {
+      "key": "rozrobka",
+      "title": "Розробка",
+      "description": "код, архітектура, мови програмування"
+    },
+    {
+      "key": "kiberbezpeka",
+      "title": "Кібербезпека",
+      "description": "захист даних, приватність"
+    },
+    {
+      "key": "shtuchnyi-intelekt",
+      "title": "Штучний інтелект",
+      "description": "інструменти, майбутнє технологій"
+    }
+  ]
+}
