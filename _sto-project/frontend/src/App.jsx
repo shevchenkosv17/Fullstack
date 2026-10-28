@@ -3,11 +3,12 @@ import FullCalendar from '@fullcalendar/react';
 import timeGridPlugin from '@fullcalendar/timegrid';
 import interactionPlugin from '@fullcalendar/interaction';
 import ukLocale from '@fullcalendar/core/locales/uk';
-import { io } from 'socket.io-client'; // Тут должна быть ТОЧКА, а не дефис!
-
+import { io } from 'socket.io-client';
 import './App.css';
 
-const socket = io('http://localhost:3000');
+// Выносим базовый адрес в жесткую переменную, чтобы Vite его не обрезал
+const API_BASE = "http://192.168.5.109:3000";
+const socket = io(API_BASE);
 
 function App() {
   const [events, setEvents] = useState([]);
@@ -20,7 +21,7 @@ function App() {
   const [editEnd, setEditEnd] = useState('');
 
   const loadData = () => {
-    fetch('http://localhost:3000/api/appointments')
+    fetch(`${API_BASE}/api/appointments`)
       .then(res => res.json())
       .then(data => {
         setEvents(data.map(app => ({
@@ -46,7 +47,7 @@ function App() {
     if (!name) return;
     const car = prompt("Марка авто:");
     
-    fetch('http://localhost:3000/api/appointments', {
+    fetch(`${API_BASE}/api/appointments`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -61,7 +62,7 @@ function App() {
 
   const handleEventChange = (changeInfo) => {
     const ep = changeInfo.event.extendedProps;
-    fetch(`http://localhost:3000/api/appointments/${changeInfo.event.id}`, {
+    fetch(`${API_BASE}/api/appointments/${changeInfo.event.id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -94,7 +95,7 @@ function App() {
   };
 
   const saveChanges = () => {
-    fetch(`http://localhost:3000/api/appointments/${menuData.id}`, {
+    fetch(`${API_BASE}/api/appointments/${menuData.id}`, {
       method: 'PUT',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
@@ -111,7 +112,7 @@ function App() {
   };
 
   const deleteEventById = (id) => {
-    fetch(`http://localhost:3000/api/appointments/${id}`, {
+    fetch(`${API_BASE}/api/appointments/${id}`, {
       method: 'DELETE'
     })
     .then(res => {
