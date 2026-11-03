@@ -236,3 +236,30 @@ body {
   resize: vertical;
   font-family: inherit;
 }
+/* --- СТИЛИ ДЛЯ КОРРЕКТНОГО ОТОБРАЖЕНИЯ ЗАПИСЕЙ В СТОЛБИКИ --- */
+
+/* Разрешаем тексту переноситься на новые строки внутри карточек */
+.fc-timegrid-event .fc-event-main {
+  padding: 6px 4px !important;
+  white-space: normal !important; /* Отменяет запрет на перенос текста */
+  word-break: break-word !important; /* Разрывает длинные слова, если они не влазят */
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 2px !important;
+  font-size: 11px !important; /* Чуть уменьшаем шрифт, чтобы помещалось больше инфы при сжатии */
+  line-height: 1.3 !important;
+}
+
+/* Стилизуем контейнер времени внутри карточки */
+.fc-timegrid-event .fc-event-time {
+  font-size: 10px !important;
+  font-weight: 700 !important;
+  margin-bottom: 2px !important;
+  opacity: 0.9 !important;
+}
+
+/* Делаем небольшой отступ между параллельными столбиками */
+.fc-timegrid-events .fc-timegrid-event {
+  margin-right: 2px !important;
+  margin-left: 2px !important;
+}

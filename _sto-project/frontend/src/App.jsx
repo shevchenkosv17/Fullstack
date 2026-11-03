@@ -9,7 +9,20 @@ import './App.css';
 const API_BASE = "http://192.168.5.109:3000";
 const socket = io(API_BASE);
 
-const MECHANICS = ['Кривобородов', 'Котов', 'Сеноженский'];
+const MECHANICS_DATA = {
+  'Кривобородов': { color: '#059669' },
+  'Котов': { color: '#7c3aed' },
+  'Сеноженский': { color: '#ea580c' },
+  'Квашин': { color: '#0284c7' },
+  'Окунь': { color: '#b45309' },
+  'Скомароха': { color: '#db2777' },
+  'Ветлянчук': { color: '#2563eb' },
+  'Денис': { color: '#4b5563' },
+  '-- Не обрано --': { color: '#3788d8' }
+};
+
+const MECHANICS = Object.keys(MECHANICS_DATA).filter(name => name !== '-- Не обрано --');
+
 
 const formatDateForInput = (dateStr) => {
   const d = new Date(dateStr);
@@ -34,10 +47,10 @@ function App() {
       .then(data => {
         setEvents(data.map(app => ({
           id: app.id.toString(),
-          title: `${app.client_name} | ${app.car_model || ''} | Мех: ${app.mechanic_name || 'Не обрано'}`,
+          title: `${app.client_name} | ${app.car_model || ''}`,
           start: app.start_time,
           end: app.end_time,
-          backgroundColor: app.color,
+          backgroundColor: app.color || '#3788d8', // Здесь должен быть app.color!
           extendedProps: { ...app }
         })));
       })
@@ -127,12 +140,12 @@ function App() {
     const props = clickInfo.event.extendedProps;
     const rect = clickInfo.el.getBoundingClientRect();
 
-    setMenuData({ 
-      id: clickInfo.event.id, 
-      top: window.scrollY + rect.top, 
-      left: window.scrollX + rect.left + rect.width + 10 
+    setMenuData({
+      id: clickInfo.event.id,
+      top: window.scrollY + rect.top,
+      left: window.scrollX + rect.left + rect.width + 10
     });
-    
+
     setEditName(props.client_name);
     setEditCar(props.car_model || '');
     setEditColor(clickInfo.event.backgroundColor);
@@ -202,7 +215,7 @@ function App() {
         eventClick={handleEventClick}
         eventDragStop={handleEventDragStop}
         slotMinTime="09:00:00"
-        slotMaxTime="19:00:00"
+        slotMaxTime="18:00:00"
         height="auto"
         weekends={false}
         allDaySlot={false}
@@ -210,6 +223,10 @@ function App() {
         locale={ukLocale}
         headerToolbar={{ left: 'prev,next today', center: 'title', right: 'timeGridWeek,timeGridDay' }}
         nowIndicator={true}
+
+        // Добавь эти две строчки ниже:
+        slotEventOverlap={false}
+        eventOrder="start"
       />
 
       <div id="calendar-calendar-trash-wrapper">
@@ -243,13 +260,18 @@ function App() {
             <label>Призначити механіка:</label>
             <select
               value={createForm.mechanic_name}
-              onChange={(e) => setCreateForm({ ...createForm, mechanic_name: e.target.value })}
+              onChange={(e) => {
+                const selectedMech = e.target.value;
+                const autoColor = MECHANICS_DATA[selectedMech || '-- Не обрано --'].color;
+                setCreateForm({ ...createForm, mechanic_name: selectedMech, color: autoColor });
+              }}
             >
               <option value="">-- Не обрано --</option>
               {MECHANICS.map((name) => (
                 <option key={name} value={name}>{name}</option>
               ))}
             </select>
+
 
             <label>Інформація по ремонту:</label>
             <textarea
@@ -295,27 +317,36 @@ function App() {
       {menuData && (
         <div className="context-edit-menu" style={{ top: menuData.top, left: menuData.left }} onClick={(e) => e.stopPropagation()}>
           <h4>Деталі ремонту</h4>
-          
+
           <label>Ім'я клієнта:</label>
           <input type="text" value={editName} onChange={(e) => setEditName(e.target.value)} />
-          
+
           <label>Автомобіль:</label>
           <input type="text" value={editCar} onChange={(e) => setEditCar(e.target.value)} />
-          
-          <label>Призначити механіка:</label>
-          <select value={editMech} onChange={(e) => setEditMech(e.target.value)}>
+
+          <label>Змінити механіка:</label>
+          <select
+            value={editMech}
+            onChange={(e) => {
+              const selectedMech = e.target.value;
+              const autoColor = MECHANICS_DATA[selectedMech || '-- Не обрано --']?.color || '#3788d8';
+              setEditMech(selectedMech);
+              setEditColor(autoColor);
+            }}
+          >
             <option value="">-- Не обрано --</option>
             {MECHANICS.map((name) => (
               <option key={name} value={name}>{name}</option>
             ))}
           </select>
 
+
           <label>Інформація по ремонту:</label>
           <textarea rows="3" value={editRepair} onChange={(e) => setEditRepair(e.target.value)} placeholder="Опишіть несправність чи перелік робіт..."></textarea>
 
           <label>Початок запису:</label>
           <input type="datetime-local" value={editStart} onChange={(e) => setEditStart(e.target.value)} />
-          
+
           <label>Кінець запису:</label>
           <input type="datetime-local" value={editEnd} onChange={(e) => setEditEnd(e.target.value)} />
 
@@ -329,7 +360,7 @@ function App() {
 
           <div className="menu-buttons">
             <button className="save-btn" onClick={saveChanges}>Зберегти</button>
-            <button className="delete-btn" onClick={() => { if(confirm("Видалити замовлення?")) { deleteEventById(menuData.id); setMenuData(null); } }}>❌ Видалити</button>
+            <button className="delete-btn" onClick={() => { if (confirm("Видалити замовлення?")) { deleteEventById(menuData.id); setMenuData(null); } }}>❌ Видалити</button>
           </div>
         </div>
       )}
