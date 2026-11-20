@@ -1,0 +1,14 @@
+{
+  "name": "hw62",
+  "version": "1.0.0",
+  "type": "module",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "ejs": "^7.0.2",
+    "express": "^5.3.0",
+    "pug": "^3.0.4"
+  }
+}
